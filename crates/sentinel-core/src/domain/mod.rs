@@ -2,6 +2,7 @@
 
 pub mod compare;
 pub mod entry;
+pub mod fee_bump;
 pub mod risk;
 pub mod ttl;
 pub mod upgrade;
@@ -11,6 +12,10 @@ pub use compare::{
     ChangeCategory, EntryDiff, MAX_BASELINE_FILE_BYTES,
 };
 pub use entry::{Durability, EntryType, StorageEntry};
+pub use fee_bump::{
+    build_replacement_fee_bump_envelope, recommend_inclusion_fee, FeePercentiles,
+    FeeRecommendation, FeeStats, FeeUrgency,
+};
 pub use risk::{
     evaluate_risk, RiskLevel, ThresholdConfig, DEFAULT_CRITICAL_LEDGERS, DEFAULT_WARNING_LEDGERS,
 };

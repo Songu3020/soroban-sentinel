@@ -4,6 +4,7 @@ use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use std::time::Duration;
 
+use crate::domain::FeeStats;
 use crate::error::{SentinelError, SentinelResult};
 use crate::ports::reader::{LatestLedgerInfo, LedgerReader, RawLedgerEntry};
 
@@ -212,6 +213,12 @@ impl SorobanRpcClient {
     /// Returns the active retry policy.
     pub fn retry_policy(&self) -> &RetryPolicy {
         &self.retry_policy
+    }
+
+    /// Fetches recent Soroban transaction inclusion fee percentiles.
+    pub async fn get_fee_stats(&self) -> SentinelResult<FeeStats> {
+        self.send_rpc_request("getFeeStats", serde_json::json!({}))
+            .await
     }
 
     /// Internal generic JSON-RPC 2.0 request dispatcher with retry and exponential backoff middleware.

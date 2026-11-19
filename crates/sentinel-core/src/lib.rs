@@ -18,12 +18,13 @@ pub use adapters::{
     MAX_RPC_BATCH_SIZE,
 };
 pub use domain::{
-    calculate_remaining_ledgers, compare_reports, estimate_horizon_days,
-    estimate_horizon_days_with_velocity, estimate_remaining_days, estimate_remaining_seconds,
-    estimate_remaining_seconds_with_velocity, evaluate_risk, BaselineDiff, BaselineDiffSummary,
-    BaselineEntrySnapshot, BaselineSnapshot, ChangeCategory, ContractCodeState,
-    ContractUpgradeEvent, Durability, EntryDiff, EntryType, RiskLevel, StorageEntry,
-    ThresholdConfig, DEFAULT_CRITICAL_LEDGERS, DEFAULT_MINIMUM_TTL_LEDGERS,
+    build_replacement_fee_bump_envelope, calculate_remaining_ledgers, compare_reports,
+    estimate_horizon_days, estimate_horizon_days_with_velocity, estimate_remaining_days,
+    estimate_remaining_seconds, estimate_remaining_seconds_with_velocity, evaluate_risk,
+    recommend_inclusion_fee, BaselineDiff, BaselineDiffSummary, BaselineEntrySnapshot,
+    BaselineSnapshot, ChangeCategory, ContractCodeState, ContractUpgradeEvent, Durability,
+    EntryDiff, EntryType, FeePercentiles, FeeRecommendation, FeeStats, FeeUrgency, RiskLevel,
+    StorageEntry, ThresholdConfig, DEFAULT_CRITICAL_LEDGERS, DEFAULT_MINIMUM_TTL_LEDGERS,
     DEFAULT_WARNING_LEDGERS, MAX_BASELINE_FILE_BYTES, SECONDS_PER_DAY, TARGET_LEDGER_CLOSE_SECONDS,
 };
 pub use error::{SentinelError, SentinelResult};
